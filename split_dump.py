@@ -7,9 +7,9 @@ parser.add_argument("--outfile","-o",help="Name of the file for output")
 args = parser.parse_args()
 print(f"Extracting {args.database} database from {args.dump}")
 
-try:  # try/except güvenlik için yazılır
+try: 
     outfile = open(args.outfile, "a", encoding='utf-8')
-    with open(args.dump, "r",encoding='utf-8') as dump_file:  # with open .... işleminden sonra otomatik dosya kendini kapatıyor.
+    with open(args.dump, "r",encoding='utf-8') as dump_file: 
        find = False
        for line in dump_file:
            if line.startswith("CREATE DATABASE /*!32312 IF NOT EXISTS*/"):
