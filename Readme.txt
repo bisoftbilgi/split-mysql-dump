@@ -12,3 +12,15 @@ options:
   --outfile OUTFILE, -o OUTFILE     Name of the file for output
 						
 > python.exe .\split_dump.py --database x --dump dump.sql --outfile x_dump.sql
+
+Note:
+PyInstaller is a third-party library that allows you to convert Python scripts into standalone executable files that can 
+run on different operating systems without needing a Python interpreter installed.
+
+> pip install pyinstaller
+
+After, the pyinstaller.exe command is used to run the PyInstaller application. The --onefile option tells PyInstaller to create a single 
+executable file that contains everything needed to run the script, rather than creating a directory of files. The .\split_dump.py argument specifies the 
+path to the Python script that you want to convert into an executable. 
+
+> pyinstaller.exe --onefile .\split_dump.py
